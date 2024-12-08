@@ -462,175 +462,72 @@ footer {
     position: relative;
 }
 
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .media-layout {
-        flex-direction: column;
-    }
-
-    .media-thumbnails {
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .media-thumbnails .media-item img {
-        width: 80px;
-    }
-
-    .media-viewer {
-        margin-top: 20px;
-    }
-}
-/* Мобильная версия */
-@media (max-width: 768px) {
+/* Адаптивный логотип */
+@media screen and (max-width: 600px) {
     #logo img {
-        max-width: 200px; /* Уменьшаем логотип на мобильных */
+        width: 200px; /* Уменьшаем логотип */
+        max-height: 60px; /* Подгоняем высоту */
     }
-
-    .p-title-value {
-        font-size: 22px; /* Уменьшаем заголовок */
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    header.wg_header {
-        height: auto;
-        padding: 10px 15px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .media-layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 0 15px;
-    }
-
-    .media-thumbnails {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .media-thumbnails .media-item {
-        width: 60px; /* Миниатюры станут меньше */
-        height: 80px;
-    }
-
-    .media-thumbnails .media-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .v2 .info .info-ss1 {
-        width: 90%; /* Уменьшаем ширину для контейнера медиа */
-        height: auto; /* Автоматическая высота */
-    }
-
-    .v2 .info .info-ss1 img,
-    .v2 .info .info-ss1 video {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .media-viewer {
-        margin-top: 15px;
-    }
-
-    .p-title-value {
-        font-size: 24px; /* Уменьшаем размер заголовка */
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    footer {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
-
-/* Для совсем маленьких экранов */
-@media (max-width: 480px) {
-    .media-thumbnails .media-item {
-        width: 50px; /* Ещё меньше миниатюры */
-        height: 70px;
-    }
-
-    .v2 .info .info-ss1 {
-        width: 100%; /* Заполняем весь экран */
-    }
-
-    .p-title-value {
-        font-size: 20px;
-    }
-}
-
-/* Мобильная адаптация логотипа */
-@media (max-width: 768px) {
     #logo-container {
-        margin-top: 20px;
-    }
-
-    #logo img {
-        max-width: 150px; /* Уменьшение логотипа для мобильных устройств */
-        width: 100%; /* Адаптация по ширине */
-    }
-
-    .p-title-value {
-        font-size: 18px; /* Уменьшение текста заголовка */
-        padding: 5px; /* Уменьшение отступов */
+        height: auto; /* Автоматическая высота для предотвращения перекрытий */
+        margin-top: 10px;
     }
 }
 
-/* Мобильная адаптация рамки для изображений */
-@media (max-width: 768px) {
+/* Адаптивный контейнер медиа */
+@media screen and (max-width: 600px) {
     .v2 .info .info-ss1 {
-        width: 95%; /* Адаптация ширины контейнера для медиа */
-        height: auto; /* Автоматическая высота */
+        width: 100%; /* Растягиваем контейнер на всю ширину экрана */
+        height: auto; /* Подгоняем высоту */
+        max-width: 90vw; /* Ограничиваем ширину */
+        margin: 10px auto; /* Убираем большие отступы */
     }
 
-    .v2 .info .info-ss1:before {
-        background-size: contain; /* Корректное отображение рамки */
-    }
-
-    .media-thumbnails .media-item {
-        width: 70px; /* Уменьшение миниатюр */
-        height: 90px;
+    .v2 .info .info-ss1 img, 
+    .v2 .info .info-ss1 video {
+        width: 100%; /* Изображения и видео занимают всю ширину контейнера */
+        height: auto; /* Подгоняем высоту */
     }
 }
 
-/* Мобильная адаптация хедера */
-@media (max-width: 768px) {
-    header.wg_header {
-        flex-direction: column; /* Столбец для хедера */
-        text-align: center;
-        padding: 10px;
-        height: auto; /* Автоматическая высота */
-    }
-
+/* Адаптивное меню */
+@media screen and (max-width: 600px) {
     nav > ul {
-        flex-direction: column; /* Вертикальное меню */
-        align-items: center; /* Центрирование элементов */
-        gap: 10px; /* Отступы между пунктами */
+        flex-direction: column; /* Меню становится вертикальным */
+        text-align: center; /* Центрируем элементы */
+        gap: 10px; /* Добавляем отступы между элементами */
     }
 
     nav > ul > li {
-        width: 100%; /* Ширина на 100% экрана */
-        text-align: center;
+        margin: 5px 0; /* Отступы между пунктами меню */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Разделитель */
+    }
+
+    nav > ul > li:last-of-type {
+        border-bottom: none; /* Убираем разделитель для последнего элемента */
+    }
+}
+/* Уменьшение логотипа и предотвращение перекрытий */
+@media screen and (max-width: 600px) {
+    #logo img {
+        width: 180px; /* Уменьшаем ширину логотипа */
+        max-height: 50px; /* Подгоняем высоту */
+    }
+
+    #logo-container {
+        margin: 10px auto; /* Центрируем контейнер логотипа */
+        height: auto; /* Высота подстраивается */
+    }
+}
+/* Миниатюры выше, с отступом */
+@media screen and (max-width: 600px) {
+    .media-thumbnails {
+        margin-top: 10px; /* Поднимаем иконки */
+        gap: 15px; /* Увеличиваем расстояние между миниатюрами */
+    }
+
+    .media-item {
+        width: 80px; /* Уменьшаем размеры иконок для маленьких экранов */
+        height: 100px;
     }
 }

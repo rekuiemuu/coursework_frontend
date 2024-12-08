@@ -50,3 +50,14 @@ function showMedia(mediaPath, mediaType) {
         mediaContainer.appendChild(videoWrapper);
     }
 }
+window.addEventListener("resize", () => {
+    const logo = document.querySelector("#logo img");
+    const thumbnails = document.querySelector(".media-thumbnails");
+    const mediaContainer = document.querySelector(".v2 .info .info-ss1");
+
+    // Убедимся, что логотип и контейнер с медиа не перекрываются
+    if (window.innerWidth < 600) {
+        thumbnails.style.marginTop = "20px";
+        mediaContainer.style.marginTop = "10px";
+    }
+});
