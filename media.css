@@ -483,3 +483,89 @@ footer {
         margin-top: 20px;
     }
 }
+/* Мобильная версия */
+@media (max-width: 768px) {
+    header.wg_header {
+        height: auto;
+        padding: 10px 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .media-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .media-thumbnails {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .media-thumbnails .media-item {
+        width: 60px; /* Миниатюры станут меньше */
+        height: 80px;
+    }
+
+    .media-thumbnails .media-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .v2 .info .info-ss1 {
+        width: 90%; /* Уменьшаем ширину для контейнера медиа */
+        height: auto; /* Автоматическая высота */
+    }
+
+    .v2 .info .info-ss1 img,
+    .v2 .info .info-ss1 video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .media-viewer {
+        margin-top: 15px;
+    }
+
+    .p-title-value {
+        font-size: 24px; /* Уменьшаем размер заголовка */
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Для совсем маленьких экранов */
+@media (max-width: 480px) {
+    .media-thumbnails .media-item {
+        width: 50px; /* Ещё меньше миниатюры */
+        height: 70px;
+    }
+
+    .v2 .info .info-ss1 {
+        width: 100%; /* Заполняем весь экран */
+    }
+
+    .p-title-value {
+        font-size: 20px;
+    }
+}
