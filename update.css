@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;/* Обычные ссылки меню */
+    .menu-item a {
+        color: rgba(255, 255, 255, 0.6); /* Стандартный цвет */
+        text-decoration: none;
+        padding: 10px 15px; /* Отступы внутри ссылки */
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+    
+    /* Ссылка при наведении */
+    .menu-item a:hover {
+        color: #f4a26d; /* Цвет текста при наведении */
+    }
+    
+    /* Ссылка для текущей страницы */
+    .current-menu-item a {
+        color: #ffffff; /* Белый цвет текста */
+        background-color: #4883ae; /* Фон ссылки */
+        border-radius: 5px; /* Скругляем углы */
+        font-weight: bold; /* Делаем текст жирным */
+    }
+    
+    /* Стили для других элементов */
+    .menu-item a:active {
+        background-color: #f4a26d;
+        color: #ffffff;
+    }
+    box-sizing: border-box; /* Упрощает работу с размерами */
+}
+/* Общие стили */
+body {
+    font-family: "Tiny5", sans-serif;
+    background-image: url('parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Закрепляем фон */
+    background-position: center center; /* Центрируем фон */
+    background-size: cover; /* Растягиваем фон по экрану */
+    font-size: 25px;
+    color: #ffffff;
+    cursor: url('cursor.png'), auto;
+}
+
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+
+    font-style: normal;
+  }
+
+/* Стили для хедера */
+header.wg_header {
+    position: relative; /* Убираем абсолютное позиционирование */
+    top: 0;
+    width: 100%;
+    background-color: #4883ae;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Вертикально центрирует элементы в хедере */
+    padding: 10px 20px; /* Отступы внутри хедера */
+    border: 1px solid #518cb6;
+}
+
+header.wg_header a {
+    color: #ffffff;
+
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul > li {
+    margin: 0 20px;
+}
+
+nav > ul > li > a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+nav > ul > li > a:hover {
+    color: #f4a26d;
+}
+
+
+@media screen and (max-width: 991px) {
+    li.social {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header.wg_header {
+        height: auto;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav > ul > li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav > ul > li:last-of-type {
+        border-bottom: none; /* Remove border from the last item */
+    }
+}
+
+
+
+/* Контейнер для логотипа */
+#logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Центрируем логотип по горизонтали */
+    align-items: center;     /* Центрируем логотип по вертикали */
+    height: 50%;            /* Логотип будет занимать всю высоту хедера */
+}
+
+/* Логотип */
+#logo img {
+    max-height: 80%;        /* Логотип будет ограничен по высоте относительно хедера */
+    width: 400px;            /* Сохраняем пропорции */
+    object-fit: contain;    /* Логотип не будет искажаться */       
+}
+.p-title {
+    display: flex; /* Центрируем содержимое */
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.p-title-value {
+    border: 6px solid transparent;
+    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image-width: 24px;
+    border-image-outset: 6px;
+    padding: 0px 18px 0px 18px;
+    margin-top: 20px;
+    color: #4d2600; /* Коричневый цвет текста */
+    margin-bottom: 16px;
+    box-shadow: 0px 10px 5px #248;
+    text-shadow: 0px 2px 1px #d5864f;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-in-out; /* Добавляем анимацию появления */
+}
+.blog-content {
+    max-width: 1300px;  /* Ограничение ширины контента */
+    margin: 50px auto;  /* Центрируем блок и добавляем отступ сверху */
+    padding: 20px;  /* Отступы внутри контейнера */
+}
+
+/* Стиль для списка комментариев */
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #FFF8DC; /* Цвет фона */
+    border: 2px solid #DEB887; /* Рамка */
+    border-radius: 8px; /* Закруглённые углы */
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Изображение аватара */
+.comment-avatar img {
+    width: 75px; /* Ширина изображения */
+    height: 75px; /* Высота изображения */
+    margin: 0;
+    padding: 0;
+    display: block; /* Убирает пробелы под изображением */
+}
+
+.comment-avatar-wrapper {
+    display: flex;
+    flex-direction: column; /* Вертикально размещаем элементы */
+    align-items: center; /* Центрируем элементы */
+    margin: 0; /* Убираем лишние внешние отступы */
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.comment-avatar {
+    border-image: url('portrait_bg.png') 35 fill repeat;
+    border-image-width: 35px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 9px 5px #545;
+    padding: 8px; /* Убираем внутренние отступы */
+
+}
+
+.username {
+
+    text-align: center; /* Центрируем текст под аватаром */
+    font-weight: bold; /* Делаем текст жирным */
+
+    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image-width: 8px;
+    border-image-outset: 0px;
+    padding: 5px 10px;
+    margin-top: 10px; /* Отступ сверху */
+    box-shadow: 0px 2px 3px #545;
+    text-shadow: 0px 1px 2px #e4ae6e;
+
+    font-weight: bold;
+    color: #8B4513;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+.comment-body {
+    margin-top: 15px;
+    margin-left: 25px;
+    font-size: 14px;
+    color: #333;
+}
+
+.comment-actions {
+
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-top: 50px; /* Это прикрепляет блок с действиями к нижней части */
+}
+
+.comment-actions button {
+    margin-top: auto; /* Это прикрепляет блок с действиями к нижней части */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.comment-actions .like-btn {
+    color: #E57373;
+}
+
+.comment-actions .dislike-btn {
+    color: #64B5F6;
+}
+
+.comment-actions .share-btn,
+.comment-actions .report-btn {
+    color: #9E9E9E;
+}
+
+/* Стиль для кнопок лайков и дизлайков */
+.comment-actions button {
+    margin-top: auto; /* Это прикрепляет блок с действиями к нижней части */
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #FFF3CC;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-actions button:hover {
+    background-color: #f7e4a4;
+}
+
+.like-btn, .dislike-btn {
+    color: green;
+}
+
+.report-btn {
+    color: red;
+}
+
+.share-btn {
+    color: blue;
+}
+
+/* конец */
+article {
+    margin: 0px;
+    width: 100%;
+    margin-bottom: 25px;
+    color: #252525;
+    border: 15px solid transparent;
+    padding: 30px;
+    padding-top: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    -webkit-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 33 stretch;
+    -o-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 33 stretch;
+    border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 33 stretch;
+    border-image-slice: 34%;
+    background-color: #FFF3CC;
+    display: inline-block;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.user .avatar img {
+    width: 75px;
+    height: 75px;
+
+}
+
+.read-more {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#add-comment {
+    margin: 20px 0;
+
+}
+
+#add-comment input,
+#add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-comment button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #b04632;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    float: right; /* Кнопка прикрепится к правой стороне */
+}
+
+#add-comment button:hover {
+    background-color: #400901;
+}
+
+
+
+
+#auth-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b04632;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#auth-container button:hover {
+    background-color: #45a049;
+}

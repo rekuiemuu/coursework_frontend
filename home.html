@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="wg_header">
+        <nav class="container">
+            <ul>
+                <li class="menu-item"><a href="home.html" style="color: #f4a26d;">Главная</a></li>
+                <li class="menu-item"><a href="update.html">Обновления</a></li>
+                <li class="menu-item"><a href="media.html">Медиа</a></li>
+                <li class="menu-item"><a href="FAQ.html">FAQ</a></li>
+
+                    </a>
+                    <a href="https://discord.com/" title="Discord">
+                        <img class="discord_social_icon" src="discord_app_white.png" alt="Discord">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Эффект параллакса -->
+    <div class="panel" id="parallax">
+        <div class="panel_layer pixelated" id="layer-1"></div>
+        <div class="panel_layer pixelated" id="layer-2"></div>
+        <div class="panel_layer parallax pixelated" id="layer-3a" data-speed="15"></div>
+        <div class="panel_layer parallax pixelated" id="layer-3b" data-speed="20"></div>
+        <div class="panel_layer parallax pixelated" id="layer-4" data-speed="65"></div>
+        <div class="panel_layer parallax pixelated" id="layer-5" data-speed="70"></div>
+        <div class="panel_layer parallax pixelated" id="layer-6" data-speed="78"></div>
+        <div class="panel_layer parallax pixelated" id="layer-7" data-speed="89"></div>
+        <div class="panel_layer parallax pixelated" id="layer-8" data-speed="100"></div>
+        <div class="panel_layer parallax pixelated" id="layer-9" data-speed="100"></div>
+        <div class="panel_layer parallax pixelated" id="layer-10" data-speed="100"></div>
+        <div class="panel_layer pixelated" id="layer-13" data-speed="100"></div>
+        <div class="panel_layer pixelated" id="layer-12" data-speed="100"></div>
+        <div class="content_break"></div>
+    </div>
+
+    <script src="parallax.js"></script>
+    <script>
+        initParallax();
+    </script>
+
+     <!-- Логотип -->
+    <div id="logo-container">
+        <div id="logo">
+            <img src="logo.png" alt="Логотип">
+        </div>
+    </div>
+
+
+<!-- Интерактивный котёнок -->
+<div id="kitten-container">
+    <img id="kitten" src="kitten/kitten-sit.png" alt="Котенок">
+</div>
+<script>
+    const kitten = document.getElementById('kitten');
+    const states = ['kitten/kitten-sit.png', 'kitten/kitten-sitting.gif', 'kitten/kitten-getting-up.gif'];
+    let currentState = 0;
+    let isTransitioning = false; // Флаг для блокировки спама
+
+    kitten.addEventListener('click', () => {
+        if (isTransitioning) return; // Если задержка ещё действует, блокируем выполнение
+
+        isTransitioning = true; // Устанавливаем флаг
+
+        // Переход к следующему состоянию
+        currentState = (currentState + 1) % states.length;
+        kitten.src = states[currentState];
+
+        // Сбрасываем флаг после задержки
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1000); // Задержка 1000 мс (1 секунда)
+    });
+</script>
+
+
+    <div id="divider"></div>
+
+    <div id="wrapper" class="wapper_main">
+        <div id="content_text_area">
+            <span id="content_title">Добро пожаловать в МИРЭА!</span><br><br>
+
+            <span id="content_highlight" class="highlighted">Life as Student: MIREA</span> — это увлекательная RPG-игра, погружающая вас в атмосферу университетской жизни. Стать первокурсником, исследовать кампус, заводить новых друзей, участвовать в занятиях и выполнять задания для развития навыков — всё это и многое другое вас ждёт в нашей игре. 
+        </div>
+
+        <hr>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="screeen1.png" alt="Изображение 1" class="active">
+                <img src="screeen2.png" alt="Изображение 2">
+                <img src="screeen3.png" alt="Изображение 3">
+            </div>
+            <div class="carousel-arrow left">
+                <img src="arrow-left.png" alt="Назад">
+            </div>
+            <div class="carousel-arrow right">
+                <img src="arrow-right.png" alt="Вперёд">
+            </div>
+        </div>
+
+        <script src="carousel.js"></script>
+
+        <hr>
+        <div id="content_text_area">
+
+          <span id="content_highlight" class="highlighted">Life as Student: MIREA</span> — это не просто игра, а ваш личный путь в мир образования и самосовершенствования!<br><br><br><br>
+        </div>
+
+
+</div>
+
+<footer id="simple-footer" style="background-color: #f8e288; color: #400901; padding: 15px 0; text-align: center;  border: 2px solid #de996d;">
+    <img src="ca_logo.png" alt="ConcernedApe" id="concernedape_logo">
+    <p style="margin: 0; font-size: 25px;">
+        © 2024 Life as student: Mirea. Все права защищены.
+    </p>
+    <p style="margin: 5px 0 0; font-size: 14px;">
+        <a href="contact.html" style="color: #de996d; text-decoration: none;">Контакты</a> | 
+        <a href="privacy.html" style="color: #de996d; text-decoration: none;">Политика конфиденциальности</a> | 
+        <a href="terms.html" style="color: #de996d; text-decoration: none;">Условия использования</a>
+    </p>
+</footer>
+
+
+</body>
+</html>
