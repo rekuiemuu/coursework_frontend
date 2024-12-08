@@ -485,6 +485,16 @@ footer {
 }
 /* Мобильная версия */
 @media (max-width: 768px) {
+    #logo img {
+        max-width: 200px; /* Уменьшаем логотип на мобильных */
+    }
+
+    .p-title-value {
+        font-size: 22px; /* Уменьшаем заголовок */
+        text-align: center;
+        margin: 10px 0;
+    }
+
     header.wg_header {
         height: auto;
         padding: 10px 15px;
@@ -567,5 +577,60 @@ footer {
 
     .p-title-value {
         font-size: 20px;
+    }
+}
+
+/* Мобильная адаптация логотипа */
+@media (max-width: 768px) {
+    #logo-container {
+        margin-top: 20px;
+    }
+
+    #logo img {
+        max-width: 150px; /* Уменьшение логотипа для мобильных устройств */
+        width: 100%; /* Адаптация по ширине */
+    }
+
+    .p-title-value {
+        font-size: 18px; /* Уменьшение текста заголовка */
+        padding: 5px; /* Уменьшение отступов */
+    }
+}
+
+/* Мобильная адаптация рамки для изображений */
+@media (max-width: 768px) {
+    .v2 .info .info-ss1 {
+        width: 95%; /* Адаптация ширины контейнера для медиа */
+        height: auto; /* Автоматическая высота */
+    }
+
+    .v2 .info .info-ss1:before {
+        background-size: contain; /* Корректное отображение рамки */
+    }
+
+    .media-thumbnails .media-item {
+        width: 70px; /* Уменьшение миниатюр */
+        height: 90px;
+    }
+}
+
+/* Мобильная адаптация хедера */
+@media (max-width: 768px) {
+    header.wg_header {
+        flex-direction: column; /* Столбец для хедера */
+        text-align: center;
+        padding: 10px;
+        height: auto; /* Автоматическая высота */
+    }
+
+    nav > ul {
+        flex-direction: column; /* Вертикальное меню */
+        align-items: center; /* Центрирование элементов */
+        gap: 10px; /* Отступы между пунктами */
+    }
+
+    nav > ul > li {
+        width: 100%; /* Ширина на 100% экрана */
+        text-align: center;
     }
 }
