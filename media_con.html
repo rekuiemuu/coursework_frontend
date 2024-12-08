@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Life as Student: MIREA Game</title>
     <link rel="stylesheet" href="media.css">
@@ -39,43 +40,38 @@
                 <h1 class="p-title-value">Медиа контент и концепт-арты</h1>
             </div>
     
-    <!-- Галерея -->
-    <div class="media-layout">
-        <!-- Маленькие изображения слева -->
-        <div class="media-thumbnails">
-            <div class="media-item" onclick="showMedia('screeen1.png', 'image')">
-                <img src="screeen1.png" alt="Изображение 1">
-            </div>
-            <div class="media-item" onclick="showMedia('screeen2.png', 'image')">
-                <img src="screeen2.png" alt="Изображение 2">
-            </div>
-            
-            <div class="media-item" onclick="showMedia('aye.mp4', 'video')">
-                <img src="screeen3.png" alt="Видео">
-            </div>
-
-            <div class="media-item" onclick="showMedia('screeen5.png', 'image')">
-                <img src="screeen5.png" alt="Изображение 3">
-            </div>
-            <div class="media-item" onclick="showMedia('screeen6.png', 'image')">
-                <img src="screeen6.png" alt="Изображение 4">
-            </div>
-        </div>
-
-        <!-- Область просмотра медиа -->
-        <div class="v2">
-            <div class="info">
-                <div class="info-ss1" id="media-container">
-                    <!-- Здесь будет отображаться выбранное медиа -->
+            <div class="media-layout">
+                <div class="media-thumbnails">
+                    <div class="media-item" onclick="showMedia('screeen1.png', 'image')">
+                        <img src="screeen1.png" alt="Изображение 1">
+                    </div>
+                    <div class="media-item" onclick="showMedia('screeen2.png', 'image')">
+                        <img src="screeen2.png" alt="Изображение 2">
+                    </div>
+                    
+                    <div class="media-item" onclick="showMedia('aye.mp4', 'video')">
+                        <img src="screeen3.png" alt="Видео">
+                    </div>
+        
+                    <div class="media-item" onclick="showMedia('screeen5.png', 'image')">
+                        <img src="screeen5.png" alt="Изображение 3">
+                    </div>
+                    <div class="media-item" onclick="showMedia('screeen6.png', 'image')">
+                        <img src="screeen6.png" alt="Изображение 4">
+                </div>
+                <div class="v2">
+                    <div class="info">
+                        <div class="info-ss1" id="media-container">
+                            <!-- Медиа-контент -->
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="table-container">
-        <div class="table-left"></div>
-        <div class="table-center"></div>
-        <div class="table-right"></div>
-    </div>
+            <div class="table-container">
+                <div class="table-left"></div>
+                <div class="table-center"></div>
+                <div class="table-right"></div>
+            </div>
 
 
     <script src="media.js"></script>

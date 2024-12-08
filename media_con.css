@@ -343,41 +343,94 @@ nav > ul > li > a:hover {
     z-index: 1;
     position: relative;
 }
-
-@media screen and (max-width: 768px) {
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    /* Убираем горизонтальный скролл */
     body {
-        overflow-x: hidden; /* Убираем горизонтальный скролл */
-    }
-
-    .media-layout {
-        flex-direction: column-reverse; /* Превью вверх */
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 0 10px; /* Отступы по краям */
     }
 
+    /* Общая структура */
+    .media-layout {
+        display: flex;
+        flex-direction: column; /* Ставим миниатюры сверху */
+        align-items: center;
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    /* Миниатюры */
     .media-thumbnails {
-        flex-wrap: wrap; /* Перенос элементов на следующую строку */
+        display: flex;
+        flex-wrap: wrap; /* Перенос на новую строку, если не помещается */
+        justify-content: center; /* Центрируем миниатюры */
+        gap: 20px;
+        width: 100%; /* Миниатюры занимают всю ширину */
+        margin-bottom: 20px; /* Отступ от просмотрщика */
+    }
+
+    .media-thumbnails .media-item img {
+        width: 80px; /* Размер миниатюр */
+        height: auto;
+    }
+
+    /* Просмотрщик (центрирование и масштабирование) */
+    .v2 {
+        display: flex;
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        width: 100%; /* Масштабируется на ширину экрана */
+        max-width: 768px; /* Лимит ширины */
+        margin: 0 auto; /* Центрирование */
     }
 
     .v2 .info .info-ss1 {
-        width: 90%;
-        max-width: 500px;
-        height: auto; /* Высота адаптируется */
-    }
-
-    .media-item {
-        width: 70px; /* Размер миниатюр */
-        height: 70px;
+        width: 90%; /* Подгоняем ширину под устройство */
+        max-width: 500px; /* Ограничиваем максимальную ширину */
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
     #media-container img,
     #media-container video {
         max-width: 100%;
         height: auto;
-        display: block;
-        margin: 0 auto;
-        object-fit: contain;
+        object-fit: contain; /* Масштабирование с сохранением пропорций */
+    }
+
+    /* Таблица внизу */
+    .table-container {
+        position: fixed; /* Закрепляем снизу */
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Масштабируем на ширину устройства */
+        height: auto; /* Высота подстраивается под содержимое */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1; /* Располагаем под просмотрщиком */
+        background-color: #222; /* Фон для наглядности */
+    }
+
+    .table-left,
+    .table-right {
+        width: 15%; /* Боковые части фиксированной ширины */
+        height: 100%;
+        background-size: contain; /* Пропорциональное масштабирование */
+        background-repeat: no-repeat;
+    }
+
+    .table-center {
+        flex-grow: 1; /* Центральная часть занимает оставшееся пространство */
+        height: 100%;
+        background-size: contain;
+        background-repeat: repeat-x;
     }
 }
