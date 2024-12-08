@@ -170,20 +170,52 @@ nav > ul > li > a:hover {
         opacity: 1;
     }
 }
-
+/* Основной контейнер */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* 100% высоты окна */
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Контейнер для контента */
+/* Контейнер с контентом */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 120px); /* Высота минус хедер */
+    padding: 20px;
+    box-sizing: border-box;
+}
 .table-left, .table-center, .table-right {
     height: 110%; /* Гарантируем одинаковую высоту для всех частей */
 }
 
+/* Фиксированная таблица снизу */
 .table-container {
-    display: flex; /* Устанавливаем горизонтальное выравнивание */
-    width: 100%; /* Растягиваем стол на всю ширину */
-    height: 150px; /* Общая высота стола */
-    position: relative; /* Чтобы настроить положение */
-    z-index: 1; /* Лежит над фоном */
-    margin-top: -70px; /* Смещаем вверх, если нужно */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    box-sizing: border-box;
+    z-index: 5;
 }
 
+.table-left, .table-right {
+    width: 10%; /* Ширина левой и правой части */
+    height: 100%;
+}
+.table-center {
+    width: 80%;
+    height: 100%;
+}
 .table-left {
     background: url('table-left.png') no-repeat center center; /* Левая часть */
     background-size: contain; /* Сохраняем пропорции */
@@ -209,22 +241,28 @@ nav > ul > li > a:hover {
 
 
 
-/* Макет галереи */
+/* Контейнер для медиапредставлений */
 .media-layout {
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
+/* Миниатюры изображений */
 .media-thumbnails {
-    display: flex; /* Горизонтальное выравнивание */
-    justify-content: center; /* Центрируем превью */
-    align-items: flex-end; /* Привязываем к нижней границе */
-    gap: 10px; /* Отступы между элементами */
-    margin-top: 20px; /* Отступ от основной области */
+    display: flex;
+    flex-direction: row; /* Миниатюры в строку */
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-right: 20px;
     position: relative;
-    z-index: 2;
-    margin-bottom: 10px; /* Отступ снизу */
+    z-index: 10;
+}
+.media-thumbnails .media-item img {
+    width: 80px;
+    height: auto;
 }
 
 .media-item {
@@ -244,7 +282,17 @@ nav > ul > li > a:hover {
     transform: translateY(-5px) rotate(0deg); /* Приподнимаем книгу */
 
 }
-
+/* Псевдокласс before (для десктопа) */
+.media-thumbnails::before {
+    content: "";
+    position: absolute;
+    right: 0; /* Справа от миниатюр */
+    width: 100px;
+    height: 100px;
+    background: url('your-image.png') no-repeat center center;
+    background-size: contain;
+    z-index: 1;
+}
 .media-item img {
     width: 100%; /* Миниатюра занимает всю ширину */
     height: 100%; /* Миниатюра занимает всю высоту */
@@ -253,7 +301,13 @@ nav > ul > li > a:hover {
     pointer-events: none; /* Отключаем взаимодействие через миниатюру */
 }
 
-
+/* Медиа-плеер */
+.media-viewer {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .media-viewer #media-container img,
 .media-viewer #media-container video {
     max-width: 100%;
@@ -327,7 +381,12 @@ nav > ul > li > a:hover {
 .play-pause-btn:hover {
     background-color: #b0473281;
 }
-
+.v2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 .v2 .info .info-ss1 img,
 .v2 .info .info-ss1 video {
     object-fit: contain;
@@ -344,93 +403,47 @@ nav > ul > li > a:hover {
     position: relative;
 }
 /* Адаптивность для мобильных устройств */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    /* Убираем горизонтальный скролл */
-    body {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Общая структура */
-    .media-layout {
-        display: flex;
-        flex-direction: column; /* Ставим миниатюры сверху */
-        align-items: center;
-        width: 100%; /* Растягиваем на всю ширину */
-    }
-
-    /* Миниатюры */
+    /* Миниатюры остаются в строку */
     .media-thumbnails {
-        display: flex;
-        flex-wrap: wrap; /* Перенос на новую строку, если не помещается */
+        flex-direction: row; /* Миниатюры располагаются в строку */
+        gap: 10px;
         justify-content: center; /* Центрируем миниатюры */
-        gap: 20px;
-        width: 100%; /* Миниатюры занимают всю ширину */
-        margin-bottom: 20px; /* Отступ от просмотрщика */
     }
 
-    .media-thumbnails .media-item img {
-        width: 80px; /* Размер миниатюр */
-        height: auto;
+    /* Псевдокласс before центрируется */
+    .media-thumbnails::before {
+        position: absolute;
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translateX(-50%);
+        top: -20px; /* Поднимаем псевдокласс */
+        width: 100px;
+        height: 100px;
+        background: url('your-image.png') no-repeat center center;
+        background-size: contain;
+        z-index: 1;
     }
 
-    /* Просмотрщик (центрирование и масштабирование) */
-    .v2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%; /* Масштабируется на ширину экрана */
-        max-width: 768px; /* Лимит ширины */
-        margin: 0 auto; /* Центрирование */
+    /* Плеер */
+    .media-viewer {
+        width: 100%;
+        margin: 0;
     }
 
-    .v2 .info .info-ss1 {
-        width: 90%; /* Подгоняем ширину под устройство */
-        max-width: 500px; /* Ограничиваем максимальную ширину */
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    #media-container img,
-    #media-container video {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain; /* Масштабирование с сохранением пропорций */
-    }
-
-    /* Таблица внизу */
+    /* Фиксированная таблица снизу */
     .table-container {
-        position: fixed; /* Закрепляем снизу */
+        position: fixed;
         bottom: 0;
-        left: 0;
-        width: 100%; /* Масштабируем на ширину устройства */
-        height: auto; /* Высота подстраивается под содержимое */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1; /* Располагаем под просмотрщиком */
-        background-color: #222; /* Фон для наглядности */
+        width: 100%;
     }
 
     .table-left,
     .table-right {
-        width: 15%; /* Боковые части фиксированной ширины */
-        height: 100%;
-        background-size: contain; /* Пропорциональное масштабирование */
-        background-repeat: no-repeat;
+        width: 100%;
     }
 
     .table-center {
-        flex-grow: 1; /* Центральная часть занимает оставшееся пространство */
-        height: 100%;
-        background-size: contain;
-        background-repeat: repeat-x;
+        width: 100%;
     }
 }
