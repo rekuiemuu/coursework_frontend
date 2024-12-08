@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;/* Обычные ссылки меню */
@@ -29,7 +30,6 @@
     box-sizing: border-box; /* Упрощает работу с размерами */
 }
 
-
 /* Общие стили */
 body {
     font-family: "Tiny5", sans-serif;
@@ -48,19 +48,20 @@ body {
     font-style: normal;
   }
 
-  header.wg_header {
-    position: absolute;
+/* Стили для хедера */
+header.wg_header {
+    position: relative; /* Убираем абсолютное позиционирование */
     top: 0;
-    height: 55px;
     width: 100%;
     background-color: #4883ae;
     text-transform: uppercase;
-
     font-weight: 700;
     font-size: 18px;
     z-index: 20;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: center; /* Вертикально центрирует элементы в хедере */
+    padding: 10px 20px; /* Отступы внутри хедера */
     border: 1px solid #518cb6;
 }
 
@@ -123,65 +124,22 @@ nav > ul > li > a:hover {
 }
 
 
-/* Меню */
-.menu {
+
+/* Контейнер для логотипа */
+#logo-container {
+    margin-top: 20px;
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-    flex: 1;
-    align-items: center;
+    justify-content: center; /* Центрируем логотип по горизонтали */
+    align-items: center;     /* Центрируем логотип по вертикали */
+    height: 50%;            /* Логотип будет занимать всю высоту хедера */
 }
 
-/* Стили для пунктов меню */
-.menu-item a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Логотип */
+#logo img {
+    max-height: 80%;        /* Логотип будет ограничен по высоте относительно хедера */
+    width: 400px;            /* Сохраняем пропорции */
+    object-fit: contain;    /* Логотип не будет искажаться */       
 }
-
-.menu-item a:hover {
-    color: #f4a26d;
-}
-
-/* Стили для ссылки "Войти" */
-.menu-item.login-link {
-    margin-left: auto; /* Отодвигаем "Войти" к правому краю */
-}
-
-.menu-item.login-link a {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.menu-item.login-link a:hover {
-    color: #f4a26d;
-}
-
-/* Адаптивность */
-@media screen and (max-width: 991px) {
-    header.wg_header {
-        flex-wrap: wrap;
-        height: auto;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .menu-item.login-link {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-}
-
-
-
-
-
-
-
 .p-title {
     display: flex; /* Центрируем содержимое */
     justify-content: center;
@@ -204,81 +162,6 @@ nav > ul > li > a:hover {
     margin-left: auto;
     margin-right: auto;
     animation: fadeIn 1s ease-in-out; /* Добавляем анимацию появления */
-}
-
-/* Анимация появления */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Контейнер для логотипа */
-#logo-container {
-    margin-top:70px;
-    display: flex;
-    justify-content: center; /* Центрируем логотип по горизонтали */
-    align-items: center;     /* Центрируем логотип по вертикали */
-    height: 50%;            /* Логотип будет занимать всю высоту хедера */
-}
-
-/* Логотип */
-#logo img {
-    max-height: 80%;        /* Логотип будет ограничен по высоте относительно хедера */
-    width: 400px;            /* Сохраняем пропорции */
-    animation: fadeIn 0.5s ease-in-out; /* Добавляем анимацию появления */
-    object-fit: contain;    /* Логотип не будет искажаться */       
-}
-
-
-
-
-#content_text_area {
-    padding: 0px;
-    text-align: center;
-    line-height: 200%;
-    padding-left: 300px;
-    padding-right: 300px;
-    color: #400901;
-}
-
-#content_text_area ul {
-	padding-left: 0px;
-}
-
-#content_title {
-    color: #b04632; 
-    font-size: 45px;
-    font-weight: 600;
-}
-
-#content_highlight {
-    color: #b04632; 
-    font-weight: 700;
-}
-
-hr {
-    height: 6px; /* Высота линии */
-    background: url(hrspike.png) repeat-x 0 0; /* Фоновое изображение */
-    border: 0; /* Убираем стандартные границы */
-    width: 80%; /* Устанавливаем ширину линии */
-    margin: 30px auto; /* Центрируем и добавляем отступы сверху и снизу */
-}
-
-/* Divider */
-#divider {
-    background: url(sdv_divider.png); 
-    position: absolute; /* Позволяет свободно размещать котенка */
-    top: 1050px; /* Расположите котенка по вертикали */
-    left: 300px; /* Расположите котенка по горизонтали */
-    width: 100px; /* Ширина контейнера для котенка, можно изменить */
-    height: auto; /* Высота автоматически подстраивается под изображение */
-    z-index: 10;
 }
 
 .table-left, .table-center, .table-right {
@@ -370,8 +253,6 @@ hr {
     border-radius: 8px;
 }
 
-
-
 /* Контейнер для видео */
 /* Общий контейнер */
 .v2 .info .info-ss1 {
@@ -450,9 +331,6 @@ hr {
     position: relative;
 }
 
-
-
-
 /* Футер */
 footer {
     clear: both;
@@ -460,74 +338,4 @@ footer {
     background-color: #222;
     text-align: center;
     position: relative;
-}
-
-/* Адаптивный логотип */
-@media screen and (max-width: 600px) {
-    #logo img {
-        width: 200px; /* Уменьшаем логотип */
-        max-height: 60px; /* Подгоняем высоту */
-    }
-    #logo-container {
-        height: auto; /* Автоматическая высота для предотвращения перекрытий */
-        margin-top: 10px;
-    }
-}
-
-/* Адаптивный контейнер медиа */
-@media screen and (max-width: 600px) {
-    .v2 .info .info-ss1 {
-        width: 100%; /* Растягиваем контейнер на всю ширину экрана */
-        height: auto; /* Подгоняем высоту */
-        max-width: 90vw; /* Ограничиваем ширину */
-        margin: 10px auto; /* Убираем большие отступы */
-    }
-
-    .v2 .info .info-ss1 img, 
-    .v2 .info .info-ss1 video {
-        width: 100%; /* Изображения и видео занимают всю ширину контейнера */
-        height: auto; /* Подгоняем высоту */
-    }
-}
-
-/* Адаптивное меню */
-@media screen and (max-width: 600px) {
-    nav > ul {
-        flex-direction: column; /* Меню становится вертикальным */
-        text-align: center; /* Центрируем элементы */
-        gap: 10px; /* Добавляем отступы между элементами */
-    }
-
-    nav > ul > li {
-        margin: 5px 0; /* Отступы между пунктами меню */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Разделитель */
-    }
-
-    nav > ul > li:last-of-type {
-        border-bottom: none; /* Убираем разделитель для последнего элемента */
-    }
-}
-/* Уменьшение логотипа и предотвращение перекрытий */
-@media screen and (max-width: 600px) {
-    #logo img {
-        width: 180px; /* Уменьшаем ширину логотипа */
-        max-height: 50px; /* Подгоняем высоту */
-    }
-
-    #logo-container {
-        margin: 10px auto; /* Центрируем контейнер логотипа */
-        height: auto; /* Высота подстраивается */
-    }
-}
-/* Миниатюры выше, с отступом */
-@media screen and (max-width: 600px) {
-    .media-thumbnails {
-        margin-top: 10px; /* Поднимаем иконки */
-        gap: 15px; /* Увеличиваем расстояние между миниатюрами */
-    }
-
-    .media-item {
-        width: 80px; /* Уменьшаем размеры иконок для маленьких экранов */
-        height: 100px;
-    }
 }

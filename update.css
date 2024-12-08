@@ -381,3 +381,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 #auth-container button:hover {
     background-color: #45a049;
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
