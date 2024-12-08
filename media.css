@@ -370,26 +370,8 @@ hr {
     border-radius: 8px;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .media-layout {
-        flex-direction: column;
-    }
 
-    .media-thumbnails {
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-    }
 
-    .media-thumbnails .media-item img {
-        width: 80px;
-    }
-
-    .media-viewer {
-        margin-top: 20px;
-    }
-}
 /* Контейнер для видео */
 /* Общий контейнер */
 .v2 .info .info-ss1 {
@@ -470,20 +452,7 @@ hr {
 
 
 
-/* Адаптивность для экранов с шириной менее 720px */
-@media screen and (max-width: 720px) {
-    .v2 .info .info-ss1 {
-        width: 360px; /* Уменьшаем ширину */
-        height: 270px; /* Уменьшаем высоту */
-    }
 
-    .v2 .info .info-ss1:before {
-        width: 360px; /* Ширина совпадает с контейнером */
-        height: 270px; /* Высота совпадает с контейнером */
-        background: url('info_ss1_abd4cd0039e54cbbe730d7782d4ca883.png') no-repeat center center; /* Используем другое изображение для мобильных */
-        background-size: cover;
-    }
-}
 /* Футер */
 footer {
     clear: both;
@@ -491,4 +460,26 @@ footer {
     background-color: #222;
     text-align: center;
     position: relative;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .media-layout {
+        flex-direction: column;
+    }
+
+    .media-thumbnails {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .media-thumbnails .media-item img {
+        width: 80px;
+    }
+
+    .media-viewer {
+        margin-top: 20px;
+    }
 }
