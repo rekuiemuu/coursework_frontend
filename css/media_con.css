@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;/* Обычные ссылки меню */
+    .menu-item a {
+        color: rgba(255, 255, 255, 0.6); /* Стандартный цвет */
+        text-decoration: none;
+        padding: 10px 15px; /* Отступы внутри ссылки */
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+    
+    /* Ссылка при наведении */
+    .menu-item a:hover {
+        color: #f4a26d; /* Цвет текста при наведении */
+    }
+    
+    /* Ссылка для текущей страницы */
+    .current-menu-item a {
+        color: #ffffff; /* Белый цвет текста */
+        background-color: #4883ae; /* Фон ссылки */
+        border-radius: 5px; /* Скругляем углы */
+        font-weight: bold; /* Делаем текст жирным */
+    }
+    
+    /* Стили для других элементов */
+    .menu-item a:active {
+        background-color: #f4a26d;
+        color: #ffffff;
+    }
+    box-sizing: border-box; /* Упрощает работу с размерами */
+}
+
+/* Общие стили */
+body {
+    font-family: "Tiny5", sans-serif;
+    background-image: url('parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Закрепляем фон */
+    background-position: center center; /* Центрируем фон */
+    background-size: cover; /* Растягиваем фон по экрану */
+    font-size: 25px;
+    color: #ffffff;
+    cursor: url('cursor.png'), auto;
+}
+
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+
+    font-style: normal;
+  }
+
+/* Стили для хедера */
+header.wg_header {
+    position: relative; /* Убираем абсолютное позиционирование */
+    top: 0;
+    width: 100%;
+    background-color: #4883ae;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Вертикально центрирует элементы в хедере */
+    padding: 10px 20px; /* Отступы внутри хедера */
+    border: 1px solid #518cb6;
+}
+
+header.wg_header a {
+    color: #ffffff;
+
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul > li {
+    margin: 0 20px;
+}
+
+nav > ul > li > a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+nav > ul > li > a:hover {
+    color: #f4a26d;
+}
+
+
+@media screen and (max-width: 991px) {
+    li.social {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header.wg_header {
+        height: auto;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav > ul > li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav > ul > li:last-of-type {
+        border-bottom: none; /* Remove border from the last item */
+    }
+}
+
+
+
+/* Контейнер для логотипа */
+#logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Центрируем логотип по горизонтали */
+    align-items: center;     /* Центрируем логотип по вертикали */
+    height: 50%;            /* Логотип будет занимать всю высоту хедера */
+}
+
+/* Логотип */
+#logo img {
+    max-height: 80%;        /* Логотип будет ограничен по высоте относительно хедера */
+    width: 400px;            /* Сохраняем пропорции */
+    object-fit: contain;    /* Логотип не будет искажаться */       
+}
+.p-title {
+    display: flex; /* Центрируем содержимое */
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.p-title-value {
+    border: 6px solid transparent;
+    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image-width: 24px;
+    border-image-outset: 6px;
+    padding: 0px 18px 0px 18px;
+    margin-top: 20px;
+    color: #4d2600; /* Коричневый цвет текста */
+    margin-bottom: 16px;
+    box-shadow: 0px 10px 5px #248;
+    text-shadow: 0px 2px 1px #d5864f;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-in-out; /* Добавляем анимацию появления */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Контейнер контента */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Галерея */
+.media-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.media-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.media-item {
+    width: 100px;
+    height: 120px;
+    background: #e8d5ba;
+    border: 2px solid #c2a67b;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* Телевизор (медиа-контейнер) */
+.v2 .info .info-ss1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 693px;
+    height: 543px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.v2 .info .info-ss1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('info_ss1_abd4cd0039e54cbbe730d7782d4ca883.png') no-repeat center center;
+    background-size: cover;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#media-container img,
+#media-container video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Стол */
+.table-container {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    margin-top: -70px;
+    z-index: 1;
+}
+
+.table-left {
+    background: url('table-left.png') no-repeat center center; /* Левая часть */
+    background-size: contain; /* Сохраняем пропорции */
+    width: 100px; /* Фиксированная ширина левой части */
+    height: 100%; /* Высота совпадает с контейнером */
+    flex-shrink: 0; /* Запрещаем уменьшение левой части */
+}
+
+.table-center {
+    background: url('table-center.png') repeat-x center center; /* Центральная часть */
+    background-size: contain; /* Масштабируем */
+    flex-grow: 1; /* Центральная часть занимает всё оставшееся пространство */
+    height: 100%; /* Высота совпадает с контейнером */
+}
+
+.table-right {
+    background: url('table-right.png') no-repeat center center; /* Правая часть */
+    background-size: contain; /* Сохраняем пропорции */
+    width: 100px; /* Фиксированная ширина правой части */
+    height: 100%; /* Высота совпадает с контейнером */
+    flex-shrink: 0; /* Запрещаем уменьшение правой части */
+}
+
+@media (max-width: 768px) {
+    .media-thumbnails {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        order: -1; /* Поднимаем миниатюры выше */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+    }
+
+    .v2 .info .info-ss1 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 600px; /* Максимальная ширина для адаптации */
+        height: auto; /* Устанавливаем автоматическую высоту */
+    }
+
+    #media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 600px; /* Устанавливаем ограничение ширины */
+    }
+}
