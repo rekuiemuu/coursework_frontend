@@ -170,52 +170,99 @@ nav > ul > li > a:hover {
         opacity: 1;
     }
 }
-/* Основной контейнер */
-.main-container {
+
+/* Контейнер контента */
+.content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh; /* 100% высоты окна */
-    padding: 0;
-    box-sizing: border-box;
-}
-/* Контейнер для контента */
-/* Контейнер с контентом */
-.content-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 120px); /* Высота минус хедер */
     padding: 20px;
-    box-sizing: border-box;
-}
-.table-left, .table-center, .table-right {
-    height: 110%; /* Гарантируем одинаковую высоту для всех частей */
 }
 
-/* Фиксированная таблица снизу */
+/* Галерея */
+.media-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.media-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.media-item {
+    width: 100px;
+    height: 120px;
+    background: #e8d5ba;
+    border: 2px solid #c2a67b;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* Телевизор (медиа-контейнер) */
+.v2 .info .info-ss1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 693px;
+    height: 543px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.v2 .info .info-ss1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('info_ss1_abd4cd0039e54cbbe730d7782d4ca883.png') no-repeat center center;
+    background-size: cover;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#media-container img,
+#media-container video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Стол */
 .table-container {
     display: flex;
-    justify-content: space-between;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    box-sizing: border-box;
-    z-index: 5;
+    height: 150px;
+    position: relative;
+    margin-top: -70px;
+    z-index: 1;
 }
 
-.table-left, .table-right {
-    width: 10%; /* Ширина левой и правой части */
-    height: 100%;
-}
-.table-center {
-    width: 80%;
-    height: 100%;
-}
 .table-left {
     background: url('table-left.png') no-repeat center center; /* Левая часть */
     background-size: contain; /* Сохраняем пропорции */
@@ -239,211 +286,31 @@ nav > ul > li > a:hover {
     flex-shrink: 0; /* Запрещаем уменьшение правой части */
 }
 
-
-
-/* Контейнер для медиапредставлений */
-.media-layout {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-}
-/* Миниатюры изображений */
-.media-thumbnails {
-    display: flex;
-    flex-direction: row; /* Миниатюры в строку */
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-right: 20px;
-    position: relative;
-    z-index: 10;
-}
-.media-thumbnails .media-item img {
-    width: 80px;
-    height: auto;
-}
-
-.media-item {
-    position: relative;
-    padding-left: 0%;
-    width: 100px; /* Ширина мини-превью */
-    height: 120px; /* Высота мини-превью */
-    transform: rotate(calc(-3deg + var(--angle, 0deg))); /* Немного поворачиваем элементы */
-    background: #e8d5ba; /* Цвет "обложки книги" */
-    border: 2px solid #c2a67b; /* Граница, напоминающая корешок книги */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Тень для объёмности */
-    cursor: pointer; /* Указатель на мышке */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Эффекты при наведении */
-}
-
-.media-item:hover {
-    transform: translateY(-5px) rotate(0deg); /* Приподнимаем книгу */
-
-}
-/* Псевдокласс before (для десктопа) */
-.media-thumbnails::before {
-    content: "";
-    position: absolute;
-    right: 0; /* Справа от миниатюр */
-    width: 100px;
-    height: 100px;
-    background: url('your-image.png') no-repeat center center;
-    background-size: contain;
-    z-index: 1;
-}
-.media-item img {
-    width: 100%; /* Миниатюра занимает всю ширину */
-    height: 100%; /* Миниатюра занимает всю высоту */
-    object-fit: cover; /* Сохраняем пропорции изображения */
-    border-radius: 4px; /* Слегка скругляем углы */
-    pointer-events: none; /* Отключаем взаимодействие через миниатюру */
-}
-
-/* Медиа-плеер */
-.media-viewer {
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.media-viewer #media-container img,
-.media-viewer #media-container video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Контейнер для видео */
-/* Общий контейнер */
-.v2 .info .info-ss1 {
-    position: relative;
-    display: flex; /* Активируем флексбокс для выравнивания */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-    width: 693px;
-    height: 543px;
-    margin: 20px auto; /* Центрируем сам контейнер */
-    overflow: hidden; /* Скрываем выходящее за рамки */
-}
-
-/* Псевдоэлемент :before для рамки */
-.v2 .info .info-ss1:before {
-    content: ""; /* Отображаем рамку */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Растягиваем рамку на всю ширину контейнера */
-    height: 100%; /* Растягиваем рамку на всю высоту контейнера */
-    background: url('info_ss1_abd4cd0039e54cbbe730d7782d4ca883.png') no-repeat center center; /* Добавляем изображение рамки */
-    background-size: cover; /* Рамка растягивается, сохраняя пропорции */
-    z-index: 5; /* Рамка располагается над видео */
-    pointer-events: none; /* Отключаем взаимодействие с рамкой */
-}
-
-/* Видео внутри контейнера */
-.v2 .info .info-ss1 video {
-    max-width: 100%; /* Видео адаптируется под ширину контейнера */
-    max-height: 100%; /* Видео адаптируется под высоту контейнера */
-    object-fit: contain; /* Сохраняем пропорции, но полностью видим всё содержимое */
-    position: relative;
-    z-index: 1;
-}
-
-
-
-
-/* Обёртка для видео */
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Кнопка Play/Pause */
-.play-pause-btn {
-    position: absolute;
-    bottom: 3px; /* Расположение кнопки снизу */
-    left: 50%;
-    height: 40px;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0); /* Прозрачный фон */
-    color: #fff;
-    border: none; /* Убираем границу */
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 10;
-    outline: none;
-    transition: background-color 0.3s;
-}
-
-.play-pause-btn:hover {
-    background-color: #b0473281;
-}
-.v2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.v2 .info .info-ss1 img,
-.v2 .info .info-ss1 video {
-    object-fit: contain;
-    max-width: 100%;
-    max-height: 60vh; /* Ограничиваем высоту на мобильных */
-}
-/* Контент (изображение) внутри контейнера */
-.v2 .info .info-ss1 img {
-    max-width: 100%; /* Изображение адаптируется под ширину контейнера */
-    max-height: 100%; /* Изображение адаптируется под высоту контейнера */
-    object-fit: contain; /* Сохраняем пропорции, но полностью видим всё содержимое */
-    display: block;
-    z-index: 1;
-    position: relative;
-}
-/* Адаптивность для мобильных устройств */
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    /* Миниатюры остаются в строку */
     .media-thumbnails {
-        flex-direction: row; /* Миниатюры располагаются в строку */
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
         gap: 10px;
-        justify-content: center; /* Центрируем миниатюры */
+        order: -1; /* Поднимаем миниатюры выше */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
     }
 
-    /* Псевдокласс before центрируется */
-    .media-thumbnails::before {
-        position: absolute;
-        left: 50%; /* Центрируем по горизонтали */
-        transform: translateX(-50%);
-        top: -20px; /* Поднимаем псевдокласс */
-        width: 100px;
-        height: 100px;
-        background: url('your-image.png') no-repeat center center;
-        background-size: contain;
-        z-index: 1;
-    }
-
-    /* Плеер */
-    .media-viewer {
+    .v2 .info .info-ss1 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        margin: 0;
+        max-width: 600px; /* Максимальная ширина для адаптации */
+        height: auto; /* Устанавливаем автоматическую высоту */
     }
 
-    /* Фиксированная таблица снизу */
-    .table-container {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .table-left,
-    .table-right {
-        width: 100%;
-    }
-
-    .table-center {
-        width: 100%;
+    #media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 600px; /* Устанавливаем ограничение ширины */
     }
 }
