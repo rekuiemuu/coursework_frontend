@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life as Student: Обновления</title>
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="update.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +14,18 @@
     <!-- Шапка сайта -->
     <header class="wg_header">
         <nav class="container">
-            <ul>
-                <li class="menu-item"><a href="index.html" >Главная</a></li>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+            <ul class="menu">
+                <li class="menu-item"><a href="index.html">Главная</a></li>
                 <li class="menu-item"><a href="update.html" style="color: #f4a26d;">Обновления</a></li>
-                <li class="menu-item"><a href="media_con.html">Медиа</a></li>
+                <li class="menu-item"><a href="media.html">Медиа</a></li>
                 <li class="menu-item"><a href="FAQ.html">FAQ</a></li>
-
-                    </a>
-                    <a href="https://discord.com/" title="Discord">
-                        <img class="discord_social_icon" src="discord_app_white.png" alt="Discord">
-                    </a>
-                </li>
             </ul>
         </nav>
-        
     </header>
 
 <body>
@@ -82,5 +82,6 @@
     </div>
 
     <script src="comments.js"></script>
+    <script src="global.js"></script>
 </body>
 </html>

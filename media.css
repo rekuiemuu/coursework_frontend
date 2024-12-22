@@ -1,271 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;/* Обычные ссылки меню */
-    .menu-item a {
-        color: rgba(255, 255, 255, 0.6); /* Стандартный цвет */
-        text-decoration: none;
-        padding: 10px 15px; /* Отступы внутри ссылки */
-        transition: color 0.3s ease, background-color 0.3s ease;
-    }
-    
-    /* Ссылка при наведении */
-    .menu-item a:hover {
-        color: #f4a26d; /* Цвет текста при наведении */
-    }
-    
-    /* Ссылка для текущей страницы */
-    .current-menu-item a {
-        color: #ffffff; /* Белый цвет текста */
-        background-color: #4883ae; /* Фон ссылки */
-        border-radius: 5px; /* Скругляем углы */
-        font-weight: bold; /* Делаем текст жирным */
-    }
-    
-    /* Стили для других элементов */
-    .menu-item a:active {
-        background-color: #f4a26d;
-        color: #ffffff;
-    }
-    box-sizing: border-box; /* Упрощает работу с размерами */
-}
-
-
-/* Основные стили для бургер-меню */
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute; /* Закрепляем позицию */
-    right: 20px; /* Отступ от правого края */
-    top: 15px; /* Отступ от верхнего края */
-    width: 35px; /* Ширина гамбургер-меню */
-    height: 20px; /* Высота гамбургер-меню */
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 20; /* Размещаем поверх других элементов */
-}
-
-
-.line {
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-}
-
-/* Стили для активного состояния меню (анимация в крестик) */
-.hamburger-menu.active .line1 {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-menu.active .line2 {
-    opacity: 0; /* Средняя линия исчезает */
-}
-
-.hamburger-menu.active .line3 {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* @keyframes для плавной трансформации */
-@keyframes rotateToCross {
-    from {
-        transform: rotate(0) translate(0, 0);
-        opacity: 1;
-    }
-    to {
-        transform: rotate(45deg);
-        opacity: 0;
-    }
-}
-
-/* Общие стили */
-body {
-    font-family: "Tiny5", sans-serif;
-    background-image: url('parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
-    background-attachment: fixed; /* Закрепляем фон */
-    background-position: center center; /* Центрируем фон */
-    background-size: cover; /* Растягиваем фон по экрану */
-    font-size: 25px;
-    color: #ffffff;
-    cursor: url('cursor.png'), auto;
-}
-
-.tiny5-regular {
-    font-family: "Tiny5", sans-serif;
-
-    font-style: normal;
-  }
-
-  header.wg_header {
-    position: absolute;
-    top: 0;
-    height: 55px;
-    width: 100%;
-    background-color: #4883ae;
-    text-transform: uppercase;
-
-    font-weight: 700;
-    font-size: 18px;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    border: 1px solid #518cb6;
-}
-
-header.wg_header a {
-    color: #ffffff;
-
-}
-
-nav {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-nav > ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav > ul > li {
-    margin: 0 20px;
-}
-
-nav > ul > li > a {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-nav > ul > li > a:hover {
-    color: #f4a26d;
-}
-
-/* Меню */
-.menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-    flex: 1;
-    align-items: center;
-}
-
-/* Стили для пунктов меню */
-.menu-item a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.menu-item a:hover {
-    color: #f4a26d;
-}
-
-/* Стили для ссылки "Войти" */
-.menu-item.login-link {
-    margin-left: auto; /* Отодвигаем "Войти" к правому краю */
-}
-
-.menu-item.login-link a {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.menu-item.login-link a:hover {
-    color: #f4a26d;
-}
-
-.p-title {
-    display: flex; /* Центрируем содержимое */
-    justify-content: center;
-    align-items: center;
-    margin-top: -15px;
-}
-
-.p-title-value {
-    border: 6px solid transparent;
-    border-image: url('scrollborder.png') 24 fill repeat;
-    border-image-width: 24px;
-    border-image-outset: 6px;
-    padding: 0px 18px 0px 18px;
-    margin-top: 20px;
-    color: #4d2600; /* Коричневый цвет текста */
-    margin-bottom: 16px;
-    box-shadow: 0px 10px 5px #248;
-    text-shadow: 0px 2px 1px #d5864f;
-    font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeIn 1s ease-in-out; /* Добавляем анимацию появления */
-}
-
-/* Анимация появления */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Контейнер для логотипа */
-#logo-container {
-    margin-top:70px;
-    display: flex;
-    justify-content: center; /* Центрируем логотип по горизонтали */
-    align-items: center;     /* Центрируем логотип по вертикали */
-    height: 50%;            /* Логотип будет занимать всю высоту хедера */
-}
-
-/* Логотип */
-#logo img {
-    max-height: 80%;        /* Логотип будет ограничен по высоте относительно хедера */
-    width: 400px;            /* Сохраняем пропорции */
-    animation: fadeIn 0.5s ease-in-out; /* Добавляем анимацию появления */
-    object-fit: contain;    /* Логотип не будет искажаться */       
-}
-
-
-
-
-#content_text_area {
-    padding: 0px;
-    text-align: center;
-    line-height: 200%;
-    padding-left: 300px;
-    padding-right: 300px;
-    color: #400901;
-}
-
-#content_text_area ul {
-	padding-left: 0px;
-}
-
-#content_title {
-    color: #b04632; 
-    font-size: 45px;
-    font-weight: 600;
-}
-
-#content_highlight {
-    color: #b04632; 
-    font-weight: 700;
-}
-
-hr {
-    height: 6px; /* Высота линии */
-    background: url(hrspike.png) repeat-x 0 0; /* Фоновое изображение */
-    border: 0; /* Убираем стандартные границы */
-    width: 80%; /* Устанавливаем ширину линии */
-    margin: 30px auto; /* Центрируем и добавляем отступы сверху и снизу */
-}
-
 /* Divider */
 #divider {
     background: url(sdv_divider.png); 
@@ -445,49 +177,9 @@ hr {
     position: relative;
 }
 
-/* Футер */
-#custom-footer {
-    background-color: #261726; /* Цвет фона */
-    color: #de996d; /* Основной цвет текста */
-    padding: 20px 0; /* Отступы сверху и снизу */
-    text-align: center; /* Центровка текста */
-    border: 2px solid #de996d; /* Граница */
-}
-
-#custom-footer .footer-logo {
-    max-width: 150px; /* Максимальная ширина логотипа */
-    margin-bottom: 10px; /* Отступ от текста */
-}
-
-#custom-footer .footer-text {
-    margin: 0;
-    font-size: 18px; /* Размер основного текста */
-    font-weight: bold; /* Жирный текст */
-}
-
-#custom-footer .footer-links {
-    margin: 10px 0 0;
-    font-size: 14px; /* Размер текста для ссылок */
-}
-
-#custom-footer .footer-link {
-    color: #de996d; /* Цвет текста ссылок */
-    text-decoration: none; /* Убираем подчёркивание */
-    margin: 0 5px; /* Отступы между ссылками */
-}
-
-#custom-footer .footer-link:hover {
-    text-decoration: underline; /* Подчёркивание при наведении */
-}
-
 
 @media (max-width: 768px) {
-    /* Адаптация заголовков */
-    .p-title-value {
-        font-size: 1em;
-        padding: 10px;
-        text-align: center; /* Центрируем текст по горизонтали */
-    }
+
     /* Галерея в один столбик */
     .media-layout {
         flex-direction: column;
@@ -503,67 +195,39 @@ hr {
         height: 80px;
         margin: 5px;
     }
-    .info {
-        width: 100%;
+
+    .v2 .info .info-ss1 {
+
+        width: 90%;
         height: auto;
-        z-index: 1000000000;
-    }
-    /* Область просмотра */
-    .v2 .info-ss1 {
-        width: 100%;
-        height: auto;
-    }
 
-    /* Адаптация логотипа */
-    #logo img {
-        width: 200px;
-    }
-
-    /* Упрощение навигации */
-    .menu {
-        display: none; /* По умолчанию скрываем меню */
-        flex-direction: column;
-        position: absolute;
-        top: 55px; /* Позиция под шапкой */
-        right: 0;
-        width: 100%;
-        background-color: #4883ae;
-        
-    }
-    .menu.active {
-        display: flex; /* Показываем меню при активации */
-    }
-
-    .menu-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 10px;
-        text-align: center;
     }
     
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 35px;
-        height: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 20;
-    }
-    .nav-links li:last-child {
-        border-bottom: none; /* Убираем нижнюю границу у последнего элемента */
+    /* Псевдоэлемент :before для рамки */
+    .v2 .info .info-ss1:before {
+
+        width: 100%; /* Растягиваем рамку на всю ширину контейнера */
+        height: 100%; /* Растягиваем рамку на всю высоту контейнера */
+
+        z-index: 5; /* Рамка располагается над видео */
+
     }
 
-    .nav-links.active {
-        display: flex; /* Показываем меню при активации */
+
+    /* Контент (изображение) внутри контейнера */
+    .v2 .info .info-ss1 img {
+        max-width: 100%; /* Изображение адаптируется под ширину контейнера */
+        max-height: 100%; /* Изображение адаптируется под высоту контейнера */
+
+        z-index: 1;
+
+    }
+    /* Видео внутри контейнера */
+    .v2 .info .info-ss1 video {
+        max-width: 100%; /* Видео адаптируется под ширину контейнера */
+        max-height: 100%; /* Видео адаптируется под высоту контейнера */
+
+        z-index: 1;
     }
 
 }
-/* Скрывать гамбургер-меню на больших экранах */
-@media (min-width: 769px) {
-    .hamburger-menu {
-        display: none; /* Скрываем кнопку на компьютере */
-    }
-}
-
