@@ -227,3 +227,75 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
         opacity: 1;
     }
 }
+
+/* Адаптация комментариев для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        font-size: 19px; /* Уменьшенный размер текста для мобильных */
+    }
+
+    /* Дополнительно можно уменьшить текст заголовков */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 90%; /* Уменьшаем размер заголовков на 10% */
+    }
+
+    p, li {
+        font-size: 90%; /* Уменьшаем текст в параграфах и списках */
+    }
+    /* Ограничение ширины контента */
+    .blog-content {
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    /* Стили комментариев */
+    .comment-item {
+        flex-direction: column; /* Переключаем на вертикальный вид */
+        align-items: center; /* Центрируем элементы */
+        text-align: center; /* Центрируем текст */
+        padding: 15px; /* Увеличиваем внутренний отступ */
+    }
+
+    .comment-avatar img {
+        width: 50px; /* Уменьшаем размер аватара */
+        height: 50px;
+    }
+
+    .comment-avatar-wrapper {
+        margin-bottom: 10px; /* Добавляем отступ между аватаром и текстом */
+    }
+
+    .username {
+        font-size: 12px; /* Уменьшаем размер шрифта */
+    }
+
+    .comment-body {
+        font-size: 14px; /* Оптимальный размер текста для мобильных */
+        margin: 10px 0; /* Увеличиваем вертикальный отступ */
+    }
+
+    /* Действия с комментариями */
+    .comment-actions {
+        margin-top: 10px; /* Уменьшаем отступы */
+        display: flex;
+        justify-content: center; /* Центрируем кнопки */
+        flex-wrap: wrap; /* Разрешаем перенос кнопок */
+        gap: 5px; /* Добавляем расстояние между кнопками */
+    }
+
+    .comment-actions button {
+        padding: 5px 10px; /* Уменьшаем отступы */
+        font-size: 12px; /* Уменьшаем размер текста кнопок */
+    }
+
+    /* Форма добавления комментария */
+    #add-comment input,
+    #add-comment textarea {
+        width: 90%; /* Уменьшаем ширину */
+        margin-bottom: 10px; /* Добавляем отступ снизу */
+    }
+
+    #add-comment button {
+        width: auto; /* Кнопка адаптируется к содержимому */
+        font-size: 14px; /* Уменьшаем шрифт */
+    }
+}

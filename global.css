@@ -389,39 +389,29 @@ hr {
 
 
 
-/* Футер */
-#custom-footer {
-    background-color: #261726; /* Цвет фона */
-    color: #de996d; /* Основной цвет текста */
-    padding: 20px 0; /* Отступы сверху и снизу */
-    text-align: center; /* Центровка текста */
-    border: 2px solid #de996d; /* Граница */
+footer#simple-footer {
+    background-color: #f8e288; /* Оставляем текущий фон */
+    color: #400901; /* Цвет текста */
+    padding: 10px 0; /* Уменьшаем вертикальные отступы */
+    text-align: center;
+    border: 1px solid #de996d; /* Уменьшаем толщину границы */
 }
 
-#custom-footer .footer-logo {
-    max-width: 150px; /* Максимальная ширина логотипа */
-    margin-bottom: 10px; /* Отступ от текста */
+footer#simple-footer img {
+    width: 80px; /* Уменьшаем размер логотипа */
+    height: auto;
+    margin-bottom: 10px; /* Уменьшаем отступ снизу */
 }
 
-#custom-footer .footer-text {
-    margin: 0;
-    font-size: 18px; /* Размер основного текста */
-    font-weight: bold; /* Жирный текст */
+footer#simple-footer p {
+    margin: 5px 0; /* Уменьшаем внешние отступы текста */
+    font-size: 14px; /* Уменьшаем размер текста */
 }
 
-#custom-footer .footer-links {
-    margin: 10px 0 0;
-    font-size: 14px; /* Размер текста для ссылок */
-}
-
-#custom-footer .footer-link {
-    color: #de996d; /* Цвет текста ссылок */
-    text-decoration: none; /* Убираем подчёркивание */
-    margin: 0 5px; /* Отступы между ссылками */
-}
-
-#custom-footer .footer-link:hover {
-    text-decoration: underline; /* Подчёркивание при наведении */
+footer#simple-footer a {
+    font-size: 14px; /* Уменьшаем размер текста ссылок */
+    color: #de996d;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -435,7 +425,18 @@ hr {
     #logo img {
         width: 200px;
     }
+    footer#simple-footer {
+        padding: 8px 0; /* Ещё меньше отступов для мобильных */
+    }
 
+    footer#simple-footer img {
+        width: 60px; /* Уменьшаем размер логотипа ещё больше */
+    }
+
+    footer#simple-footer p,
+    footer#simple-footer a {
+        font-size: 12px; /* Уменьшаем размер текста */
+    }
     /* Упрощение навигации */
     .menu {
         display: none; /* По умолчанию скрываем меню */

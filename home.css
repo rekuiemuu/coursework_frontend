@@ -1,3 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;/* Обычные ссылки меню */
+    .menu-item a {
+        color: rgba(255, 255, 255, 0.6); /* Стандартный цвет */
+        text-decoration: none;
+        padding: 10px 15px; /* Отступы внутри ссылки */
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+    
+    /* Ссылка при наведении */
+    .menu-item a:hover {
+        color: #f4a26d; /* Цвет текста при наведении */
+    }
+    
+    /* Ссылка для текущей страницы */
+    .current-menu-item a {
+        color: #ffffff; /* Белый цвет текста */
+        background-color: #4883ae; /* Фон ссылки */
+        border-radius: 5px; /* Скругляем углы */
+        font-weight: bold; /* Делаем текст жирным */
+    }
+    
+    /* Стили для других элементов */
+    .menu-item a:active {
+        background-color: #f4a26d;
+        color: #ffffff;
+    }
+    box-sizing: border-box; /* Упрощает работу с размерами */
+}
+
+/* Общие стили */
+body {
+    font-family: "Tiny5", sans-serif;
+    background-image: url('parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
+    background-attachment: fixed; /* Закрепляем фон */
+    background-position: center center; /* Центрируем фон */
+    background-size: cover; /* Растягиваем фон по экрану */
+    font-size: 25px;
+    color: #ffffff;
+    cursor: url('cursor.png'), auto;
+}
+
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+
+    font-style: normal;
+  }
+
+/* Стили для хедера */
+header.wg_header {
+    position: relative; /* Убираем абсолютное позиционирование */
+    top: 0;
+    width: 100%;
+    background-color: #4883ae;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Вертикально центрирует элементы в хедере */
+    padding: 10px 20px; /* Отступы внутри хедера */
+    border: 1px solid #518cb6;
+}
+
+header.wg_header a {
+    color: #ffffff;
+
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul > li {
+    margin: 0 20px;
+}
+
+nav > ul > li > a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+nav > ul > li > a:hover {
+    color: #f4a26d;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    li.social {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header.wg_header {
+        height: auto;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav > ul > li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav > ul > li:last-of-type {
+        border-bottom: none; /* Remove border from the last item */
+    }
+}
+
+
+/* Основные стили для бургер-меню */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute; /* Закрепляем позицию */
+    right: 20px; /* Отступ от правого края */
+    top: 15px; /* Отступ от верхнего края */
+    width: 35px; /* Ширина гамбургер-меню */
+    height: 20px; /* Высота гамбургер-меню */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20; /* Размещаем поверх других элементов */
+}
+
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Стили для активного состояния меню (анимация в крестик) */
+.hamburger-menu.active .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .line2 {
+    opacity: 0; /* Средняя линия исчезает */
+}
+
+.hamburger-menu.active .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* @keyframes для плавной трансформации */
+@keyframes rotateToCross {
+    from {
+        transform: rotate(0) translate(0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Общие стили */
+
+
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+
+    font-style: normal;
+  }
+
+  header.wg_header {
+    position: absolute;
+    top: 0;
+    height: 55px;
+    width: 100%;
+    background-color: #4883ae;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    border: 1px solid #518cb6;
+}
+
+header.wg_header a {
+    color: #ffffff;
+
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul > li {
+    margin: 0 20px;
+}
+
+nav > ul > li > a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+nav > ul > li > a:hover {
+    color: #f4a26d;
+}
+
+/* Меню */
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    flex: 1;
+    align-items: center;
+}
+
+/* Стили для пунктов меню */
+.menu-item a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-item a:hover {
+    color: #f4a26d;
+}
+
+/* Стили для ссылки "Войти" */
+.menu-item.login-link {
+    margin-left: auto; /* Отодвигаем "Войти" к правому краю */
+}
+
+.menu-item.login-link a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.menu-item.login-link a:hover {
+    color: #f4a26d;
+}
+
+.p-title {
+    display: flex; /* Центрируем содержимое */
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+
+/* Футер */
+#custom-footer {
+    background-color: #261726; /* Цвет фона */
+    color: #de996d; /* Основной цвет текста */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Центровка текста */
+    border: 2px solid #de996d; /* Граница */
+}
+
+#custom-footer .footer-logo {
+    max-width: 150px; /* Максимальная ширина логотипа */
+    margin-bottom: 10px; /* Отступ от текста */
+}
+
+#custom-footer .footer-text {
+    margin: 0;
+    font-size: 18px; /* Размер основного текста */
+    font-weight: bold; /* Жирный текст */
+}
+
+#custom-footer .footer-links {
+    margin: 10px 0 0;
+    font-size: 14px; /* Размер текста для ссылок */
+}
+
+#custom-footer .footer-link {
+    color: #de996d; /* Цвет текста ссылок */
+    text-decoration: none; /* Убираем подчёркивание */
+    margin: 0 5px; /* Отступы между ссылками */
+}
+
+#custom-footer .footer-link:hover {
+    text-decoration: underline; /* Подчёркивание при наведении */
+}
 
 /* Добавьте эти стили к родительскому элементу, если он есть */
 #logo-container {
@@ -348,5 +655,115 @@ hr {
         transform: scale(1);
     }
 }
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%; /* Карусель занимает всю ширину экрана */
+        aspect-ratio: 16 / 9; /* Сохраняем пропорции */
+        margin: 10px auto; /* Уменьшаем отступы */
+    }
 
+    .carousel-arrow img {
+        width: 40px; /* Уменьшаем размер стрелок на мобильных */
+        height: auto;
+    }
+    /* Логотип контейнер */
+    #logo-container {
+        display: flex;
+        justify-content: center; /* Центрируем логотип по горизонтали */
+        align-items: center; /* Центрируем по вертикали */
+        padding: 20px; /* Уменьшаем отступы */
+        margin-top: 200px; /* Опускаем логотип ниже */
+    }
+    #content_title {
+        line-height: 1; /* Убираем межстрочный интервал */
+        margin: 0; /* Убираем внешние отступы */
+    }
+    footer#simple-footer {
+        padding: 8px 0; /* Ещё меньше отступов для мобильных */
+    }
 
+    footer#simple-footer img {
+        width: 300px; /* Уменьшаем размер логотипа ещё больше */
+    }
+
+    footer#simple-footer p,
+    footer#simple-footer a {
+        font-size: 12px; /* Уменьшаем размер текста */
+    }
+
+    #kitten-container {
+        position: relative; /* Задаем относительное позиционирование */
+        left: -50px; /* Сдвигаем котика влево */
+        top: 300px; /* Сдвигаем котика выше */
+        margin: 0 auto; /* Центрируем по горизонтали относительно родительского элемента */
+        height: auto;
+    }
+
+    #kitten {
+        width: 100%; /* Котик занимает всю ширину контейнера */
+        height: auto; /* Сохраняем пропорции */
+    }
+    #content_text_area {
+        text-align: center; /* Центрируем текст внутри блока */
+        padding: 10px 20px; /* Добавляем отступы */
+        margin: 0 auto; /* Центрируем сам блок */
+        color: #400901; /* Цвет текста */
+        line-height: 1.6; /* Устанавливаем межстрочный интервал */
+        max-width: 600px; /* Ограничиваем ширину блока */
+    }
+
+    /* Логотип изображение */
+    #logo img {
+        width: 350px; /* Уменьшаем ширину логотипа */
+        height: auto; /* Сохраняем пропорции */
+   
+        padding: 5px; /* Уменьшаем внутренние отступы */
+    }
+
+    /* Упрощение навигации */
+    .menu {
+        display: none; /* По умолчанию скрываем меню */
+        flex-direction: column;
+        position: absolute;
+        top: 55px; /* Позиция под шапкой */
+        right: 0;
+        width: 100%;
+        background-color: #4883ae;
+        
+    }
+    .menu.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+    .menu-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35px;
+        height: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 20;
+    }
+    .nav-links li:last-child {
+        border-bottom: none; /* Убираем нижнюю границу у последнего элемента */
+    }
+
+    .nav-links.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+}
+/* Скрывать гамбургер-меню на больших экранах */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Скрываем кнопку на компьютере */
+    }
+}
