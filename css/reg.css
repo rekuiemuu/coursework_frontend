@@ -1,51 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;/* Обычные ссылки меню */
-    .menu-item a {
-        color: rgba(255, 255, 255, 0.6); /* Стандартный цвет */
-        text-decoration: none;
-        padding: 10px 15px; /* Отступы внутри ссылки */
-        transition: color 0.3s ease, background-color 0.3s ease;
-    }
-    
-    /* Ссылка при наведении */
-    .menu-item a:hover {
-        color: #f4a26d; /* Цвет текста при наведении */
-    }
-    
-    /* Ссылка для текущей страницы */
-    .current-menu-item a {
-        color: #ffffff; /* Белый цвет текста */
-        background-color: #4883ae; /* Фон ссылки */
-        border-radius: 5px; /* Скругляем углы */
-        font-weight: bold; /* Делаем текст жирным */
-    }
-    
-    /* Стили для других элементов */
-    .menu-item a:active {
-        background-color: #f4a26d;
-        color: #ffffff;
-    }
-    box-sizing: border-box; /* Упрощает работу с размерами */
-}
-
-
-header.wg_header {
-    position: absolute;
-    top: 0;
-    height: 55px;
-    width: 100%;
-    background-color: #4883ae;
-    text-transform: uppercase;
-
-    font-weight: 700;
-    font-size: 18px;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    border: 1px solid #518cb6;
-}
-
 header.wg_header a {
     color: #ffffff;
 
@@ -117,12 +69,12 @@ body {
     height: 100vh;
     margin: 0;
     font-family: "Tiny5", sans-serif;
-    background-image: url('background.jpg'); /* Путь к фоновому изображению */
+    background-image: url('../assets/background.jpg'); /* Путь к фоновому изображению */
     background-attachment: fixed; /* Закрепляем фон */
     background-position: center center; /* Центрируем фон */
     background-size: cover; /* Растягиваем фон по экрану */
     color: #ffffff;
-    cursor: url('cursor.png'), auto;
+    cursor: url('../assets/cursor.png'), auto;
 }
 
 /* Контейнер для логотипа */
@@ -149,7 +101,7 @@ body {
 
 .p-title-value {
     border: 6px solid transparent;
-    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image: url('../assets/scrollborder.png') 24 fill repeat;
     border-image-width: 24px;
     border-image-outset: 6px;
     padding: 0px 18px 0px 18px;

@@ -32,13 +32,13 @@
 /* Общие стили */
 body {
     font-family: "Tiny5", sans-serif;
-    background-image: url('parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
+    background-image: url('../assets/home/parallax/bg_1_layer_3-export.png'); /* Путь к фоновому изображению */
     background-attachment: fixed; /* Закрепляем фон */
     background-position: center center; /* Центрируем фон */
     background-size: cover; /* Растягиваем фон по экрану */
     font-size: 25px;
     color: #ffffff;
-    cursor: url('cursor.png'), auto;
+    cursor: url('../assets/cursor.png'), auto;
 }
 
 .tiny5-regular {
@@ -148,7 +148,7 @@ nav > ul > li > a:hover {
 
 .p-title-value {
     border: 6px solid transparent;
-    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image: url('../assets/scrollborder.png') 24 fill repeat;
     border-image-width: 24px;
     border-image-outset: 6px;
     padding: 0px 18px 0px 18px;
@@ -351,14 +351,14 @@ nav > ul > li > a:hover {
 
 hr {
     height: 6px; /* Высота линии */
-    background: url(hrspike.png) repeat-x 0 0; /* Фоновое изображение */
+    background: url(../assets/hrspike.png) repeat-x 0 0; /* Фоновое изображение */
     border: 0; /* Убираем стандартные границы */
     width: 80%; /* Устанавливаем ширину линии */
     margin: 30px auto; /* Центрируем и добавляем отступы сверху и снизу */
 }
 .p-title-value {
     border: 6px solid transparent;
-    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image: url('../assets/scrollborder.png') 24 fill repeat;
     border-image-width: 24px;
     border-image-outset: 6px;
     padding: 0px 18px 0px 18px;

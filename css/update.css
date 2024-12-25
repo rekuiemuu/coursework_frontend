@@ -44,7 +44,7 @@
 }
 
 .comment-avatar {
-    border-image: url('portrait_bg.png') 35 fill repeat;
+    border-image: url('../assets/update/portrait_bg.png') 35 fill repeat;
     border-image-width: 35px;
     margin: 0;
     padding: 0;
@@ -58,7 +58,7 @@
     text-align: center; /* Центрируем текст под аватаром */
     font-weight: bold; /* Делаем текст жирным */
 
-    border-image: url('scrollborder.png') 24 fill repeat;
+    border-image: url('assets/scrollborder.png') 24 fill repeat;
     border-image-width: 8px;
     border-image-outset: 0px;
     padding: 5px 10px;
@@ -201,9 +201,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 #add-comment button:hover {
     background-color: #400901;
 }
-
-
-
 
 #auth-container button {
     padding: 10px 20px;

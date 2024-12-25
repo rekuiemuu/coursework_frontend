@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Устанавливаем медиа по умолчанию
-    const defaultMediaPath = 'screeen2.png'; // Путь к изображению по умолчанию
+    const defaultMediaPath = 'assets/screens/screen2.png'; // Путь к изображению по умолчанию
     const defaultMediaType = 'image'; // Тип медиа по умолчанию (image или video)
 
     // Отображаем медиа по умолчанию

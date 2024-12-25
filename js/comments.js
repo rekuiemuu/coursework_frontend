@@ -1,42 +1,42 @@
 // Массив с имитационными комментариями
 const commentsData = [
     {
-        avatar: "icons/images (1).jpg",
+        avatar: "assets/update/icons/john_titor.jpg",
         username: "John Titor",
         comment: "УРА!!! ОБНОВЛЕНИЕ!!!!",
         likes: 39,
         dislikes: 3
     },
     {
-        avatar: "img-PCjqfmmFTDgRBWUf9uI2y.jpeg",
+        avatar: "assets/update/icons/rekuiemuu.jpeg",
         username: "rekuiemuu",
         comment: "Рада, что вам нравится!",
         likes: 179,
         dislikes: 5
     },
     {
-        avatar: "icons/Безымяннвый.png",
+        avatar: "assets/update/icons/mitch.png",
         username: "митч",
         comment: "обновления игры про Мирэа выходят чаще чем обновления тф2. игра года, безусловно ",
         likes: 112,
         dislikes: 0
     },
     {
-        avatar: "icons/photo_2024-11-16_08-54-32.jpg",
+        avatar: "assets/update/icons/b7bl1k4t.jpg",
         username: "b7bl1k4t",
         comment: "Возможно, игра — это the friends we made along the way...",
         likes: 10,
         dislikes: 0
     },
     {
-        avatar: "icons/photo_2024-11-16_08-54-36.jpg", // Используйте относительные пути
+        avatar: "assets/update/icons/wallrat1.jpg", // Используйте относительные пути
         username: "wallrat1",
         comment: "Я исчадие, что породила бездна абсурда...Мяумяумяу",
         likes: 5,
         dislikes: 24
     },
     {
-        avatar: "icons/1.jpg", // Используйте относительные пути
+        avatar: "assets/update/icons/mimim.jpg", // Используйте относительные пути
         username: "mimim",
         comment: "а будет на TEMPLE OS?",
         likes: 50,
@@ -45,7 +45,7 @@ const commentsData = [
 
 ];
 
-function displayComments(commentListId, commentsData) {
+function displayComments(commentListId) {
     const commentList = document.getElementById(commentListId);
     commentList.innerHTML = ''; // Очистим список комментариев перед добавлением новых
 
@@ -77,26 +77,6 @@ function displayComments(commentListId, commentsData) {
     });
 }
 
-// Функция для переключения видимости комментариев
-function toggleComments(toggleId, commentsId, commentListId, commentsData) {
-    const toggleCommentsLink = document.getElementById(toggleId);
-    const commentsSection = document.getElementById(commentsId);
-    const addCommentForm = document.getElementById('add-comment'); // Форма добавления комментария
-
-    toggleCommentsLink.addEventListener('click', function () {
-        if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
-            commentsSection.style.display = 'block'; // Показываем комментарии
-            addCommentForm.style.display = 'block'; // Показываем форму добавления комментария
-            displayComments(commentListId, commentsData); // Отображаем комментарии
-            toggleCommentsLink.textContent = 'Скрыть комментарии »';
-        } else {
-            commentsSection.style.display = 'none'; // Скрываем комментарии
-            addCommentForm.style.display = 'none'; // Скрываем форму добавления комментария
-            toggleCommentsLink.textContent = 'Комментарии »';
-        }
-    });
-}
-
 // Функции для действий с комментариями
 function toggleLike(index) {
     commentsData[index].likes += 1;
@@ -120,7 +100,7 @@ function reportComment(index) {
 function addComment(commentListId) {
     const usernameInput = document.getElementById('username-input');
     const commentInput = document.getElementById('comment-input');
-    const avatarUrl = "info_movie_fc88ef0b94d14e7f75cc9d0c416b582a.gif"; // Заглушка для аватара
+    const avatarUrl = "assets/icons/user_avatar.gif"; // Заглушка для аватара
 
 
     // Создаём новый комментарий
@@ -141,14 +121,6 @@ function addComment(commentListId) {
 
     // Обновляем отображение комментариев
     displayComments(commentListId, commentsData);
-}
-// Обработка входа
-function loginUser() {
-    alert('Вы вошли как "test_user". Теперь вы можете просматривать и добавлять комментарии.');
-    document.getElementById('auth-container').style.display = 'none'; // Скрываем блок авторизации
-    document.getElementById('comments-1').style.display = 'block'; // Показываем комментарии
-    document.getElementById('add-comment').style.display = 'block'; // Показываем форму добавления комментария
-    displayComments('comment-list-1'); // Отображаем комментарии
 }
 
 document.addEventListener("DOMContentLoaded", function () {

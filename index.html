@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life as Student: Главная</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
         <div class="content_break"></div>
     </div>
 
-    <script src="parallax.js"></script>
+    <script src="js/parallax.js"></script>
     <script>
         initParallax();
     </script>
@@ -53,18 +53,19 @@
      <!-- Логотип -->
     <div id="logo-container">
         <div id="logo">
-            <img src="logo.png" alt="Логотип">
+            <img src="assets/logo.png" alt="Логотип">
         </div>
     </div>
 
 
 <!-- Интерактивный котёнок -->
 <div id="kitten-container">
-    <img id="kitten" src="kitten/kitten-sit.png" alt="Котенок">
+    <img id="kitten" src="assets/home/kitten/kitten-sit.png" alt="Котенок">
 </div>
 <script>
     const kitten = document.getElementById('kitten');
-    const states = ['kitten/kitten-sit.png', 'kitten/kitten-sitting.gif', 'kitten/kitten-getting-up.gif'];
+    const path = 'assets/kitten/'
+    const states = [path + 'kitten-sit.png', path + 'kitten-sitting.gif', path + 'kitten-getting-up.gif'];
     let currentState = 0;
     let isTransitioning = false; // Флаг для блокировки спама
 
@@ -98,19 +99,19 @@
 
         <div class="carousel">
             <div class="carousel-images">
-                <img src="screeen1.png" alt="Изображение 1" class="active">
-                <img src="screeen2.png" alt="Изображение 2">
-                <img src="screeen3.png" alt="Изображение 3">
+                <img src="assets/screens/screen1.png" alt="Изображение 1" class="active">
+                <img src="assets/screens/screen2.png" alt="Изображение 2">
+                <img src="assets/screens/screen3.png" alt="Изображение 3">
             </div>
             <div class="carousel-arrow left">
-                <img src="arrow-left.png" alt="Назад">
+                <img src="assets/home/arrow-left.png" alt="Назад">
             </div>
             <div class="carousel-arrow right">
-                <img src="arrow-right.png" alt="Вперёд">
+                <img src="assets/home/arrow-right.png" alt="Вперёд">
             </div>
         </div>
 
-        <script src="carousel.js"></script>
+        <script src="js/carousel.js"></script>
 
         <hr>
         <div id="content_text_area">
@@ -122,7 +123,7 @@
 </div>
 
 <footer id="simple-footer" style="background-color: #f8e288; color: #400901; padding: 15px 0; text-align: center;  border: 2px solid #de996d;">
-    <img src="ca_logo.png" alt="ConcernedApe" id="concernedape_logo">
+    <img src="assets/ca_logo.png" alt="ConcernedApe" id="concernedape_logo">
     <p style="margin: 0; font-size: 25px;">
         © 2024 Life as student: Mirea. Все права защищены.
     </p>
@@ -133,6 +134,6 @@
     </p>
 </footer>
 
-<script src="global.js"></script>
+<script src="js/global.js"></script>
 </body>
 </html>

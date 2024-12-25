@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life as Student: Обновления</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="update.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/update.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 <body>
     <div id="logo-container">
         <div id="logo">
-            <img src="logo.png" alt="Логотип">
+            <img src="assets/logo.png" alt="Логотип">
         </div>
     </div>
         <div class="p-title">
@@ -43,7 +43,7 @@
         <article id="post-2079">
             <div class="user">
                 <div class="avatar">
-                    <img src="img-PCjqfmmFTDgRBWUf9uI2y.jpeg" class="avatar" alt="avatar">
+                    <img src="assets/update/icons/rekuiemuu.jpeg" class="avatar" alt="avatar">
                 </div>
                 <h1><a href="#" title="Stardew Valley 1.6 Mobile &amp; Console Release date">Обновление Life as student: Mirea</a></h1>
                 <div class="post-info">
@@ -58,30 +58,22 @@
                 <br>
             </div>
     
-                    <div id="auth-container" style="text-align: center; margin-top: 20px;"></div>
+            <div id="auth-container" style="text-align: center; margin-top: 20px;"></div>
 
-                    <div id="comments-1" class="comments" style="display: none;">
-                        <h3>Комментарии</h3>
-                        <ul id="comment-list-1"></ul>
-                    </div>
+            <div id="comments-1" class="comments" style="display: none;">
+                <h3>Комментарии</h3>
+                <ul id="comment-list-1"></ul>
+            </div>
 
-                    <!-- Форма добавления комментария -->
-                    <div id="add-comment" style="display: none;">
-                        <textarea id="comment-input" placeholder="Ваш комментарий"></textarea>
-                        <button onclick="addComment('comment-list-1')">Отправить комментарий</button>
-                    </div>
-
-
-            <!-- Форма для добавления комментария -->
-            <div id="add-comment" style="display: none;">я
-                <input type="text" id="username-input" placeholder="Ваше имя">
+            <!-- Форма добавления комментария -->
+            <div id="add-comment" style="display: none;">
                 <textarea id="comment-input" placeholder="Ваш комментарий"></textarea>
                 <button onclick="addComment('comment-list-1')">Отправить комментарий</button>
             </div>
         </article>
     </div>
 
-    <script src="comments.js"></script>
-    <script src="global.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/global.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     margin: 20px;
     gap: 20px;
+    /*border: 2px solid blue; !* Временный стиль для проверки *!*/
 }
 
 .media-thumbnails {
@@ -14,6 +15,7 @@
     gap: 10px; /* Отступы между элементами */
     margin-top: 20px; /* Отступ от основной области */
     z-index: 2;
+    /*border: 2px solid green; !* Временный стиль для проверки *!*/
 }
 
 .media-item {
@@ -50,6 +52,7 @@
     aspect-ratio: 693 / 543;
     padding: 0;
     z-index: 2;
+    /*border: 2px solid red; !* Временный стиль для проверки *!*/
     overflow: hidden;
 }
 
@@ -61,7 +64,7 @@
     left: 0; /* Растягиваем на всю ширину */
     width: 100%; /* Растягиваем рамку на всю ширину контейнера */
     height: 100%; /* Растягиваем рамку на всю высоту контейнера */
-    background: url('media-frame.png') no-repeat center center; /* Добавляем изображение рамки */
+    background: url('../assets/media/media-frame.png') no-repeat center center; /* Добавляем изображение рамки */
     background-size: cover; /* Рамка растягивается, сохраняя пропорции */
     z-index: 5; /* Рамка располагается над видео */
     pointer-events: none; /* Отключаем взаимодействие с рамкой */
@@ -119,7 +122,7 @@
 }
 
 .table-left {
-    background: url('table-left.png') no-repeat center center; /* Левая часть */
+    background: url('../assets/media/table/table-left.png') no-repeat center center; /* Левая часть */
     background-size: contain; /* Сохраняем пропорции */
     width: 100px; /* Фиксированная ширина левой части */
     height: 100%; /* Высота совпадает с контейнером */
@@ -127,14 +130,14 @@
 }
 
 .table-center {
-    background: url('table-center.png') repeat-x center center; /* Центральная часть */
+    background: url('../assets/media/table/table-center.png') repeat-x center center; /* Центральная часть */
     background-size: contain; /* Масштабируем */
     flex-grow: 1; /* Центральная часть занимает всё оставшееся пространство */
     height: 100%; /* Высота совпадает с контейнером */
 }
 
 .table-right {
-    background: url('table-right.png') no-repeat center center; /* Правая часть */
+    background: url('../assets/media/table/table-right.png') no-repeat center center; /* Правая часть */
     background-size: contain; /* Сохраняем пропорции */
     width: 100px; /* Фиксированная ширина правой части */
     height: 100%; /* Высота совпадает с контейнером */
@@ -167,10 +170,11 @@
     }
 
     .table-container {
-        background: url('table-art.png') no-repeat center center;
+        background: url('../assets/media/table/table-art.png') no-repeat center center;
         background-size: contain;
         width: 100%;
-        height: 150px;
+        height: 200px;
+
         margin-top: -50px;
     }
     /* Видео или изображения внутри */
