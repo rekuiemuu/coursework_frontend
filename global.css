@@ -165,9 +165,7 @@ nav > ul > li > a:hover {
 
 /* Основные стили для бургер-меню */
 .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: none; /* Скрываем кнопку на компьютере */
     position: absolute; /* Закрепляем позицию */
     right: 20px; /* Отступ от правого края */
     top: 15px; /* Отступ от верхнего края */
@@ -176,7 +174,6 @@ nav > ul > li > a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 20; /* Размещаем поверх других элементов */
 }
 
 
@@ -270,6 +267,7 @@ nav > ul > li > a:hover {
 /* Меню */
 .menu {
     display: flex;
+    flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -435,18 +433,7 @@ hr {
     #logo img {
         width: 200px;
     }
-footer#simple-footer {
-        padding: 8px 0; /* Ещё меньше отступов для мобильных */
-    }
 
-    footer#simple-footer img {
-        width: 60px; /* Уменьшаем размер логотипа ещё больше */
-    }
-
-    footer#simple-footer p,
-    footer#simple-footer a {
-        font-size: 12px; /* Уменьшаем размер текста */
-    }
     /* Упрощение навигации */
     .menu {
         display: none; /* По умолчанию скрываем меню */
@@ -487,10 +474,4 @@ footer#simple-footer {
         display: flex; /* Показываем меню при активации */
     }
 
-}
-/* Скрывать гамбургер-меню на больших экранах */
-@media (min-width: 769px) {
-    .hamburger-menu {
-        display: none; /* Скрываем кнопку на компьютере */
-    }
 }

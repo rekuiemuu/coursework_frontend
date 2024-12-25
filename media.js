@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showMedia(mediaPath, mediaType) {
-    const mediaContainer = document.getElementById('media-container');
+    const mediaContainer = document.querySelector(".media-showcase-container");
     mediaContainer.innerHTML = ''; // Очищаем контейнер перед добавлением нового медиа
 
     if (mediaType === 'image') {
         const imgElement = document.createElement('img');
         imgElement.src = mediaPath;
         imgElement.alt = 'Изображение';
-        imgElement.style.width = '100%';
-        imgElement.style.height = '100%';
-        imgElement.style.objectFit = 'cover';
+        imgElement.style.width = '100%'; // Масштабируем изображение по ширине
+        imgElement.style.height = '100%'; // Масштабируем изображение по высоте
+        imgElement.style.objectFit = 'cover'; // Обеспечиваем правильное обрезание
         mediaContainer.appendChild(imgElement);
     } else if (mediaType === 'video') {
         const videoWrapper = document.createElement('div');
